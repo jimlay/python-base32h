@@ -6,7 +6,7 @@ Python implementation of Base32H from https://base32h.github.io/
 
 ## How to use?
 
-```elixir
+```python
 base32h.encode_number(17854910) == "H0WDY"
 
 base32h.decode_base32h("88pzd") == 8675309
