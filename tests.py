@@ -1,6 +1,8 @@
 import unittest
 import base32h
 
+from itertools import chain
+
 
 class TestBase32HMethods(unittest.TestCase):
 
@@ -25,7 +27,7 @@ class TestBase32HMethods(unittest.TestCase):
             with self.assertRaises(Exception):
                 base32h.encode_number(n)
 
-        for n in range(35) + range(0, 32**2+1, 16):
+        for n in chain(range(35), range(0, 32**2+1, 16)):
             self.assertEqual(type(base32h.encode_number(n)), str)
 
     def test_decode_(self):

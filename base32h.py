@@ -55,9 +55,9 @@ def encode_number(n):
         code = encode_digit(n % 32)
         if n == 0:
             return code
-        quotient = n/32
+        quotient = int(n/32)
         if quotient > 0:
-            return encode_number(n/32) + code
+            return encode_number(quotient) + code
         # last digit - return it.
         return code
     raise Exception("Invalid encoding number:" + str(n))
